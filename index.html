@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>YoutubeClone</title>
+  </head>
+  <body>
+    <!-- Header Starts -->
+    <div class="header">
+      <div class="header__left">
+        <i id="menu" class="material-icons">menu</i>
+        <img
+          src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_light.svg?cache=72a5d9c"
+          alt=""
+        />
+      </div>
+
+      <div class="header__search">
+        <form action="">
+          <input class="search-bar" type="text" placeholder="Search" />
+          <button><i class="material-icons">search</i></button>
+        </form>
+      </div>
+
+      <div class="header__icons">
+        <i class="material-icons display-this">search</i>
+        <i class="material-icons">videocam</i>
+        <i class="material-icons">apps</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons display-this">account_circle</i>
+      </div>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+    <div class="mainBody">
+      <!-- Sidebar Starts -->
+      <div class="sidebar">
+        <div class="sidebar__categories">
+          <div class="sidebar__category">
+            <i class="material-icons">home</i>
+            <span>Home</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">local_fire_department</i>
+            <span>Trending</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">subscriptions</i>
+            <span>Subcriptions</span>
+          </div>
+        </div>
+        <hr />
+        <div class="sidebar__categories">
+          <div class="sidebar__category">
+            <i class="material-icons">library_add_check</i>
+            <span>Library</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">history</i>
+            <span>History</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">play_arrow</i>
+            <span>Your Videos</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">watch_later</i>
+            <span>Watch Later</span>
+          </div>
+          <div class="sidebar__category">
+            <i class="material-icons">thumb_up</i>
+            <span>Liked Videos</span>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <!-- Sidebar Ends -->
+
+      <!-- Videos Section -->
+      <div class="videos">
+        <div class="videos__container">
+          <!-- Single Video starts -->
+          <div class="video">
+            <div class="video__thumbnail">
+              <img
+                src="https://img.youtube.com/vi/PpXUTUXU7Qc/maxresdefault.jpg"
+                alt=""
+              />
+            </div>
+            <div class="video__details">
+              <div class="author">
+                <img
+                  src="http://aninex.com/images/srvc/web_de_icon.png"
+                  alt=""
+                />
+              </div>
+              <div class="title">
+                <h3>
+                  Top 5 Programming Languages to Learn in 2021 | Best
+                  Programming Languages to Learn
+                </h3>
+                <a href="">FutureCoders</a>
+                <span>10M Views • 3 Months Ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- Single Video Ends -->
+        </div>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+    <!-- Main Body Ends -->
+  </body>
+</html>
