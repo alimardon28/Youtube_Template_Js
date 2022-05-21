@@ -41,7 +41,7 @@ body {
   cursor: pointer;
 }
 
-.header__search form {
+.header__search .form {
   border: 1px solid #000;
   height: 35px;
   margin: 0;
@@ -178,8 +178,8 @@ hr {
 
 .title h3 {
   color: #fff;
-  line-height: 18px;
-  font-size: 14px;
+  line-height: 15px;
+  font-size: 12px;
   margin-bottom: 6px;
 }
 
@@ -187,7 +187,7 @@ hr {
 span {
   text-decoration: none;
   color: rgb(119, 119, 119);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 @media (max-width: 425px) {
@@ -230,3 +230,41 @@ span {
     width: 300px;
   }
 }
+
+
+.videoItem {
+  width: 84%;
+  min-height: 85vh;
+  position: absolute;
+  left: 12%;
+  opacity: 1;
+  top: 110px;
+}
+
+.hide {
+  opacity: 0;
+  position: absolute;
+  z-index: -555;
+}
+
+.player{
+  padding: 12px 0px 15px 25px;
+  display: flex;
+  justify-content:center;
+}
+
+.container-title{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.channel-icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*
+.titles{
+
+} */
