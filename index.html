@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="./css/main.css" />
     <title>Youtube</title>
   </head>
@@ -17,23 +21,29 @@
     <div class="header">
       <div class="header__left">
         <i id="menu" class="material-icons">menu</i>
-        <img
-          src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_light.svg?cache=72a5d9c"
-          alt=""
-        />
+        <img src="./img/youtubelogo.png" alt="" />
       </div>
 
       <div class="header__search">
-        <div class="form">
-          <input class="search-bar" type="text" placeholder="Search" />
-          <button type="submit"><i class="material-icons">search</i></button>
+        <div class="form" id="forms">
+          <div class="inputs">
+            <input
+              class="search-bar"
+              id="search"
+              type="text"
+              placeholder="Search"
+            />
+            <i class="bi bi-arrow-right"></i>
+          </div>
+          <button class="button" type="submit">
+            <i id="searchIcon" class="material-icons">search</i>
+          </button>
         </div>
       </div>
 
       <div class="header__icons">
-        <i class="material-icons display-this">search</i>
-        <i class="material-icons">videocam</i>
-        <i class="material-icons">apps</i>
+        <i class="material-icons videocam">videocam</i>
+        <i class="material-icons apps">apps</i>
         <i class="material-icons">notifications</i>
         <i class="material-icons display-this">account_circle</i>
       </div>
@@ -89,7 +99,7 @@
       <div class="videos">
         <div class="videos__container">
           <!-- Single Video starts -->
-        <!--  <div class="video">
+          <!--  <div class="video">
             <div class="video__thumbnail">
               <img
                 src="https://img.youtube.com/vi/PpXUTUXU7Qc/maxresdefault.jpg"

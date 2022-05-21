@@ -1,13 +1,24 @@
+const searchBox = document.querySelector(".search-bar");
+const videoContainer = document.querySelector(".videos__container");
+const videoItem = document.querySelector(".videoItem");
 const menu = document.querySelector("#menu");
 const sidebar = document.querySelector(".sidebar");
+const button = document.querySelector(".button");
+const iconsActive = document.querySelector(".bi-arrow-right");
+
+button.addEventListener("click", () => {
+  searchBox.classList.add("activeInputs");
+  iconsActive.classList.add("activeIcons");
+
+  iconsActive.addEventListener("click", () => {
+    searchBox.classList.remove("activeInputs");
+    iconsActive.classList.remove("activeIcons");
+  });
+});
 
 menu.addEventListener("click", function () {
   sidebar.classList.toggle("show-sidebar");
 });
-
-const searchBox = document.querySelector(".search-bar");
-const videoContainer = document.querySelector(".videos__container");
-const videoItem = document.querySelector(".videoItem");
 
 const KEY = "AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5MA";
 const URL = "https://www.googleapis.com/youtube/v3/search?";
