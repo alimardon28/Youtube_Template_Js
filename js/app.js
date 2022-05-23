@@ -1,3 +1,4 @@
+const videosContainer = document.querySelector(".videos");
 const searchBox = document.querySelector(".search-bar");
 const videoContainer = document.querySelector(".videos__container");
 const videoItem = document.querySelector(".videoItem");
@@ -44,7 +45,6 @@ function sendDisplay(res) {
     const div = document.createElement("div");
     div.dataset.link = item.id.videoId;
     div.classList.add("vidId");
-    console.log(item);
     div.innerHTML = `
       <div class="video">
       <div class="video__thumbnail">
@@ -92,7 +92,7 @@ function setVideo(list) {
       );
 
       const res = await req.json();
-      videoContainer.style.display = "none";
+      videosContainer.style.display = "none";
 
       sendVideo(res, item.dataset.link, list);
     });
@@ -100,6 +100,7 @@ function setVideo(list) {
 }
 
 function sendVideo(item, videoId, list) {
+  console.log(list);
   const div = document.createElement("div");
   div.classList.add("player");
 
@@ -109,20 +110,48 @@ function sendVideo(item, videoId, list) {
   const { channelTitle, description, thumbnails, localized } = items[0].snippet;
 
   div.innerHTML = `
+<div class="fluid_container">
+
+<div class="fluid_container-left">
+<div class="divs">
+  <iframe
+    width="841"
+    height="549"
+    src="https://www.youtube.com/embed/${videoId}"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <p>search'${localized.title}'</p>
+</div>
+
+<div class="container-title">
+  <img src="${thumbnails.high.url}" class="channel-icon" alt="" />
+  <h2>"${channelTitle}"</h2>
+</div>
+</div>
+
+<div class="container-fluid-right">
+<div class="container-fluid-right-top">
 
 
-
- <div class="div>
- <iframe width="841" height="549" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
- <p>${localized.title}</p>
- </div>
-
-<div class='container-title'>
-<img src="${thumbnails.high.url}" class="channel-icon" alt="" />
-<h2>${channelTitle}</h2>
+<div class="divss">
+<img src="{list.thumbnails.default.url}" alt="" />
+<div>
+  <span>${list.channelTitle ? list.channelTitle : ""}</span>
+  <p>{list.snippet.channelTitle}</p>
+</div>
+</div>
 
 </div>
+</div>
+
+
+</div>
+
+
+
   `;
 
   videoItem.prepend(div);
