@@ -35,11 +35,11 @@ body {
 .header__left {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__left img {
-  width: 95px;
-  height: 25px;
+  width:80px;
   margin-left: 15px;
 }
 
