@@ -39,8 +39,8 @@ searchBox.addEventListener("keypress", (e) => {
   }
 });
 
-(function (){
-  getData('')
+(function () {
+  getData("");
 })();
 
 function sendDisplay(res) {
@@ -88,8 +88,6 @@ function setVideo(list) {
   const vid = document.querySelectorAll(".vidId");
 
   vid.forEach((item) => {
-    console.log(item);
-
     item.addEventListener("click", async () => {
       const req = await fetch(
         `https://www.googleapis.com/youtube/v3/videos?id=${item.dataset.link}&key=${KEY}&part=snippet`
