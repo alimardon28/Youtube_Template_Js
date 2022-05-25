@@ -173,8 +173,10 @@ hr {
 
 .video {
   width: 310px;
-
-  margin-bottom: 30px;
+  display: flex;
+  align-items:flex-start;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .video__thumbnail {
