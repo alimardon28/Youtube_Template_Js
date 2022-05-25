@@ -26,7 +26,7 @@ body {
   color: #fff;
   border-right: 1px solid #202020;
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -38,7 +38,8 @@ body {
 }
 
 .header__left img {
-  width: 100px;
+  width: 95px;
+  height: 25px;
   margin-left: 15px;
 }
 
@@ -86,9 +87,9 @@ body {
 .mainBody {
   height: 100vh;
   display: flex;
-  overflow:auto;
+  overflow: auto;
   padding-top: 68px;
-  }
+}
 
 .sidebar {
   height: 100%;
@@ -144,8 +145,23 @@ hr {
   height: 100%;
   padding: 15px 15px;
   border-top: 1px solid #000;
-  overflow-y: hidden;
+  overflow-y: scroll;
   color: #fff;
+}
+
+.videos::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.videos::-webkit-scrollbar-track {
+  border-radius: 15px;
+}
+
+/* Handle */
+.videos::-webkit-scrollbar-thumb {
+  background: rgb(209, 209, 209);
+  border-radius: 15px;
 }
 
 .videos__container {
@@ -319,35 +335,35 @@ span {
   left: 10%;
 }
 
-.fluid_container{
+.fluid_container {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.container-fluid-right{
+.container-fluid-right {
   margin: 0;
   padding: 0;
 }
 
-.container-fluid-right-top{
+.container-fluid-right-top {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  max-height:600px;
+  max-height: 600px;
   overflow-y: scroll !important;
   padding: 20px;
 }
 
 .hide {
-  opacity:1;
+  opacity: 1;
   z-index: -555;
 }
 
 .player {
   padding: 12px 0px 15px 25px;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   min-height: 600px;
   min-width: 700px;
@@ -365,12 +381,12 @@ span {
   border-radius: 50%;
 }
 
-.divs{
+.divs {
   display: flex;
   flex-direction: column;
 }
 
-.divss{
+.divss {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

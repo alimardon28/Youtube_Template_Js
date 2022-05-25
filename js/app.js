@@ -39,6 +39,10 @@ searchBox.addEventListener("keypress", (e) => {
   }
 });
 
+(function (){
+  getData('')
+})();
+
 function sendDisplay(res) {
   videoContainer.innerHTML = "";
   res.map((item) => {
@@ -137,10 +141,10 @@ function sendVideo(item, videoId, list) {
 
 
 <div class="divss">
-<img src="{list.thumbnails.default.url}" alt="" />
+<img src="${list.thumbnails.high.url}" alt="" />
 <div>
   <span>${list.channelTitle ? list.channelTitle : ""}</span>
-  <p>{list.snippet.channelTitle}</p>
+  <p>${list.snippet.title}</p>
 </div>
 </div>
 
