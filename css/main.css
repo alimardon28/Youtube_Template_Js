@@ -260,8 +260,6 @@ span {
 @media screen and (max-width:561px) {
 
   .header__left img {
-    width: 77px;
-    height: 30px;
     margin-left: 10px;
   }
 }
@@ -310,12 +308,6 @@ span {
   .button {
     position: absolute;
     left: 20%;
-  }
-
-  .header__left img {
-    width: 77px;
-    height: 30px;
-    margin-left: 10px;
   }
 }
 
