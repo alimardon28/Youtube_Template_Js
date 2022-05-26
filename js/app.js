@@ -6,9 +6,7 @@ const menu = document.querySelector("#menu");
 const sidebar = document.querySelector(".sidebar");
 const button = document.querySelector(".button");
 const iconsActive = document.querySelector(".bi-arrow-right");
-const containerFluidRightTop = document.querySelector(
-  ".container-fluid-right-top"
-);
+const containerFluidRightTop = document.querySelector(".container-fluid-right-top");
 
 menu.addEventListener("click", () => {
   sidebar.classList.toggle("show-sidebar");
@@ -24,9 +22,7 @@ button.addEventListener("click", () => {
   });
 });
 
-const KEY = "AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5NA";
-// qo'shimcha api key
-// AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5NA
+const KEY = "AIzaSyAyC5eq3O0AV3R71m9niCpcWRjwCxz2ek8";
 const URL = "https://www.googleapis.com/youtube/v3/search?";
 
 async function getData(query) {
@@ -149,25 +145,24 @@ function sendVideo(item, videoId, list) {
 
   `;
   videoItem.prepend(div);
-  // videoRight(list);
+  videoRight(list);
 }
 
-// function videoRight(videos) {
-//   console.log(videos);
-//   let cards = document.createElement("div");
-
-//   videos?.map((rightVideo) => {
-//     console.log(rightVideo);
-
-//     cards.innerHTML = `
-//       <div class="divss">
-//       <img src="${rightVideo.thumbnails.high.url}" alt="" />
-//       <div>
-//         <span>${rightVideo.channelTitle ? list.channelTitle : ""}</span>
-//         <p>${rightVideo.title}</p>
-//       </div>
-//     </div>
-//       `;
-//   });
-//   containerFluidRightTop.prepend(cards);
-// }
+function videoRight(videos) {
+  console.log(videos);
+  const videoItems = document.createElement("div");
+console.log(videos);
+  videos?.map((rightVideo) => {
+   console.log(videos);
+    videoItems.innerHTML = `
+      <div class="divss">
+      <img src="{rightVideo.default.url}" alt="" />
+      <div>
+        <span>${rightVideo.channelTitle ? list.channelTitle : ""}</span>
+        <p>${rightVideo.title}</p>
+      </div>
+    </div>
+      `;
+      containerFluidRightTop.append(videoItems);
+    });
+}

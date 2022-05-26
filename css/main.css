@@ -26,7 +26,7 @@ body {
   z-index: 1000;
 }
 
-.sidebar-bar {
+/* .sidebar-bar {
   margin: 0;
   padding: 0;
   display: flex;
@@ -34,7 +34,7 @@ body {
   justify-content: start;
   position: fixed;
   z-index: 997;
-}
+} */
 
 .header-top {
   display: flex;
