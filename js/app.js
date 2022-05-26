@@ -24,7 +24,9 @@ button.addEventListener("click", () => {
   });
 });
 
-const KEY = "AIzaSyApxXdmIaXMEe5227_t_Va0SH3N3q3xNPI";
+const KEY = "AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5NA";
+// qo'shimcha api key
+// AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5NA
 const URL = "https://www.googleapis.com/youtube/v3/search?";
 
 async function getData(query) {
@@ -33,7 +35,6 @@ async function getData(query) {
   );
   const response = await request.json();
   sendDisplay(response.items);
-
 }
 
 searchBox.addEventListener("keypress", (e) => {
@@ -43,13 +44,11 @@ searchBox.addEventListener("keypress", (e) => {
   }
 });
 
-// AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5NA
 (function () {
   getData("");
 })();
 
 function sendDisplay(res) {
-  console.log(res);
   videoContainer.innerHTML = "";
   res.map((itemvideo) => {
     const div = document.createElement("div");
@@ -149,27 +148,26 @@ function sendVideo(item, videoId, list) {
 
 
   `;
-  videoRight(list);
-
   videoItem.prepend(div);
+  // videoRight(list);
 }
 
-function videoRight(videos) {
-  console.log(videos);
-  let cards = document.createElement("div");
+// function videoRight(videos) {
+//   console.log(videos);
+//   let cards = document.createElement("div");
 
-  videos?.map((rightVideo) => {
-    console.log(rightVideo);
+//   videos?.map((rightVideo) => {
+//     console.log(rightVideo);
 
-    cards.innerHTML = `
-      <div class="divss">
-      <img src="${rightVideo.thumbnails.high.url}" alt="" />
-      <div>
-        <span>${rightVideo.channelTitle ? list.channelTitle : ""}</span>
-        <p>${rightVideo.title}</p>
-      </div>
-    </div>
-      `;
-  });
-  containerFluidRightTop.prepend(cards);
-}
+//     cards.innerHTML = `
+//       <div class="divss">
+//       <img src="${rightVideo.thumbnails.high.url}" alt="" />
+//       <div>
+//         <span>${rightVideo.channelTitle ? list.channelTitle : ""}</span>
+//         <p>${rightVideo.title}</p>
+//       </div>
+//     </div>
+//       `;
+//   });
+//   containerFluidRightTop.prepend(cards);
+// }
