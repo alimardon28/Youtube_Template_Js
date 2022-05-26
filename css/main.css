@@ -235,10 +235,11 @@ span {
   }
 
   .show-sidebar {
-    display: inline;
+    display:block;
     position: fixed;
     top: 4.4rem;
     height: auto;
+    z-index: 99;
   }
 }
 

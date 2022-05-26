@@ -6,7 +6,14 @@ const menu = document.querySelector("#menu");
 const sidebar = document.querySelector(".sidebar");
 const button = document.querySelector(".button");
 const iconsActive = document.querySelector(".bi-arrow-right");
+const containerFluidRightTop = document.querySelector(
+  ".container-fluid-right-top"
+);
 
+menu.addEventListener("click", () => {
+  sidebar.classList.toggle("show-sidebar");
+  console.log("bosildiii");
+});
 button.addEventListener("click", () => {
   searchBox.classList.add("activeInputs");
   iconsActive.classList.add("activeIcons");
@@ -17,11 +24,7 @@ button.addEventListener("click", () => {
   });
 });
 
-menu.addEventListener("click", function () {
-  sidebar.classList.toggle("show-sidebar");
-});
-
-const KEY = "AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5MA";
+const KEY = "AIzaSyApxXdmIaXMEe5227_t_Va0SH3N3q3xNPI";
 const URL = "https://www.googleapis.com/youtube/v3/search?";
 
 async function getData(query) {
@@ -30,6 +33,7 @@ async function getData(query) {
   );
   const response = await request.json();
   sendDisplay(response.items);
+
 }
 
 searchBox.addEventListener("keypress", (e) => {
@@ -39,38 +43,40 @@ searchBox.addEventListener("keypress", (e) => {
   }
 });
 
+// AIzaSyDYMpYv_AianLl7R_b3JmU4O4bKUOBz5NA
 (function () {
   getData("");
 })();
 
 function sendDisplay(res) {
+  console.log(res);
   videoContainer.innerHTML = "";
-  res.map((item) => {
+  res.map((itemvideo) => {
     const div = document.createElement("div");
-    div.dataset.link = item.id.videoId;
+    div.dataset.link = itemvideo.id.videoId;
     div.classList.add("vidId");
     div.innerHTML = `
       <div class="video">
       <div class="video__thumbnail">
         <img
-          src="${item.snippet.thumbnails.high.url}"
+          src="${itemvideo.snippet.thumbnails.high.url}"
           alt=""
         />
       </div>
       <div class="video__details">
         <div class="author">
           <img
-            src="${item.snippet.thumbnails.high.url}"
+            src="${itemvideo.snippet.thumbnails.high.url}"
             alt=""
           />
         </div>
         <div class="title">
           <h3 class="titles">
-          ${item.snippet.description ? item.snippet.title : ""}
+          ${itemvideo.snippet.description ? itemvideo.snippet.title : ""}
           </h3>
           <a href="">FutureCoders</a>
           <span>${
-            item.snippet.channelTitle ? item.snippet.channelTitle : ""
+            itemvideo.snippet.channelTitle ? itemvideo.snippet.channelTitle : ""
           }</span>
         </div>
       </div>
@@ -102,7 +108,6 @@ function setVideo(list) {
 }
 
 function sendVideo(item, videoId, list) {
-  console.log(list);
   const div = document.createElement("div");
   div.classList.add("player");
 
@@ -135,18 +140,7 @@ function sendVideo(item, videoId, list) {
 </div>
 
 <div class="container-fluid-right">
-<div class="container-fluid-right-top">
 
-
-<div class="divss">
-<img src="${list.thumbnails.high.url}" alt="" />
-<div>
-  <span>${list.channelTitle ? list.channelTitle : ""}</span>
-  <p>${list.snippet.title}</p>
-</div>
-</div>
-
-</div>
 </div>
 
 
@@ -155,6 +149,27 @@ function sendVideo(item, videoId, list) {
 
 
   `;
+  videoRight(list);
 
   videoItem.prepend(div);
+}
+
+function videoRight(videos) {
+  console.log(videos);
+  let cards = document.createElement("div");
+
+  videos?.map((rightVideo) => {
+    console.log(rightVideo);
+
+    cards.innerHTML = `
+      <div class="divss">
+      <img src="${rightVideo.thumbnails.high.url}" alt="" />
+      <div>
+        <span>${rightVideo.channelTitle ? list.channelTitle : ""}</span>
+        <p>${rightVideo.title}</p>
+      </div>
+    </div>
+      `;
+  });
+  containerFluidRightTop.prepend(cards);
 }
