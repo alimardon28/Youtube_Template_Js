@@ -284,6 +284,11 @@ span {
   .header-center-buttons {
     overflow-x: scroll;
     min-width: auto;
+    margin-left: 4%;
+  }
+
+  .header-center-button+.header-center-button {
+    margin-right: 3%;
   }
 }
 
