@@ -155,7 +155,7 @@ function videoRight(videos) {
   console.log(videos);
   const videoItems = document.createElement("div");
   console.log(videos);
-  videos?.map((rightVideo) => {
+  videos.map((rightVideo) => {
     console.log(videos);
     videoItems.innerHTML = `
       <div class="divss">
