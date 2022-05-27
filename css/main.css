@@ -386,10 +386,6 @@ span {
   .header__icons .display-this {
     display: inline;
   }
-
-  .sidebar {
-    display: none;
-  }
 }
 
 .videoItem {

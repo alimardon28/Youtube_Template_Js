@@ -6,20 +6,22 @@ const menu = document.querySelector("#menu");
 const sidebar = document.querySelector(".sidebar");
 const button = document.querySelector(".button");
 const iconsActive = document.querySelector(".bi-arrow-right");
-const containerFluidRightTop = document.querySelector(".container-fluid-right-top");
+const containerFluidRightTop = document.querySelector(
+  ".container-fluid-right-top"
+);
 
 menu.addEventListener("click", () => {
   sidebar.classList.toggle("show-sidebar");
   console.log("bosildiii");
 });
 button.addEventListener("click", () => {
-  searchBox.classList.add("activeInputs");
-  iconsActive.classList.add("activeIcons");
+  searchBox.classList.toggle("activeInputs");
+  iconsActive.classList.toggle("activeIcons");
+});
 
-  iconsActive.addEventListener("click", () => {
-    searchBox.classList.remove("activeInputs");
-    iconsActive.classList.remove("activeIcons");
-  });
+iconsActive.addEventListener("click", () => {
+  searchBox.classList.remove("activeInputs");
+  iconsActive.classList.remove("activeIcons");
 });
 
 const KEY = "AIzaSyAyC5eq3O0AV3R71m9niCpcWRjwCxz2ek8";
@@ -135,7 +137,8 @@ function sendVideo(item, videoId, list) {
 </div>
 
 <div class="container-fluid-right">
-
+<div class="container-fluid-right-top">
+</div>
 </div>
 
 
@@ -151,9 +154,9 @@ function sendVideo(item, videoId, list) {
 function videoRight(videos) {
   console.log(videos);
   const videoItems = document.createElement("div");
-console.log(videos);
+  console.log(videos);
   videos?.map((rightVideo) => {
-   console.log(videos);
+    console.log(videos);
     videoItems.innerHTML = `
       <div class="divss">
       <img src="{rightVideo.default.url}" alt="" />
@@ -163,6 +166,6 @@ console.log(videos);
       </div>
     </div>
       `;
-      containerFluidRightTop.append(videoItems);
-    });
+    containerFluidRightTop.append(videoItems);
+  });
 }
