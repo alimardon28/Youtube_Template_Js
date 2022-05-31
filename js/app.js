@@ -127,7 +127,7 @@ function sendVideo(item, videoId, list) {
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
   ></iframe>
-  <p>search'${localized.title}'</p>
+  <p>${localized.title}</p>
 </div>
 
 <div class="container-title">

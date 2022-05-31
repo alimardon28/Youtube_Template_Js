@@ -8,6 +8,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #202020;
 }
 
 /* header */
@@ -286,6 +287,7 @@ span {
   position: absolute;
   width: 90%;
   left: 10%;
+  height: 100%;
 }
 
 .fluid_container {
@@ -366,6 +368,7 @@ span {
   padding-top: 8px;
   font-size: 13px;
   color: #fff;
+  width: 200px;
 }
 
 .divss {
@@ -393,6 +396,10 @@ span {
 }
 
 @media (max-width: 1025px) {
+  .videoItem {
+    height: 700px;
+  }
+
   .header-center-buttons {
     overflow-x: scroll;
     min-width: auto;
@@ -450,6 +457,10 @@ span {
   iframe {
     width: 96%;
   }
+
+  .videoItem {
+    height: 660px;
+  }
 }
 
 @media (max-width: 713px) {
@@ -465,6 +476,10 @@ span {
 @media (max-width:690px) {
   .header__search input {
     width: 240px;
+  }
+
+  .videoItem {
+    height: 370px;
   }
 
   .videocam {
