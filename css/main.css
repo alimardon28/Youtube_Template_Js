@@ -578,3 +578,9 @@ span {
     min-width: 0 !important;
   }
 }
+
+@media (max-width: 376px) {
+  iframe {
+    width: 370px;
+  }
+}
