@@ -152,17 +152,18 @@ function sendVideo(item, videoId, list) {
 }
 
 function videoRight(videos) {
-  console.log(videos);
-  const videoItems = document.createElement("div");
-  console.log(videos);
   videos.map((rightVideo) => {
-    console.log(videos);
+    const videoItems = document.createElement("div");
     videoItems.innerHTML = `
       <div class="divss">
-      <img src="{rightVideo.default.url}" alt="" />
+      <img class='results-img' src="${
+        rightVideo.snippet.thumbnails.default.url
+      }" alt="" />
       <div>
-        <span>${rightVideo.channelTitle ? list.channelTitle : ""}</span>
-        <p>${rightVideo.title}</p>
+        <span class='results-desc'>${
+          rightVideo.snippet.channelTitle ? rightVideo.snippet.channelTitle : ""
+        }</span>
+        <p class='result-title'>${rightVideo.snippet.title}</p>
       </div>
     </div>
       `;
